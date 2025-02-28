@@ -1,6 +1,7 @@
 package com.example.todo;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -16,6 +17,7 @@ public class TodoController {
 	public List<Todo> getAllTodos() {
 		return todoService.getAllTodos();
 	}
+
 
 	@GetMapping("/{id}")
 	public Todo getTodoById(@PathVariable Long id) {
@@ -42,4 +44,10 @@ public class TodoController {
 		model.addAllAttributes(todoService.getAllTodos());
 		return "shweta";
 	}
+
+	// @PatchMapping("/product/{id}")
+	// public Todo updatePartialTodo(@PathVariable Long id, @RequestBody Map<String, Object> updates) {
+	// 	return todoService.updateTodo(id, null);
+	// }
+
 }
